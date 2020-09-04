@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="oleo-script">Localize </ion-title>
+        <ion-buttons slot='end'>
+            <ion-button slot="icon-only" (click)="dismiss()">
+                <ion-icon name="close">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card>
+        <video id="video" width="100%" autoplay></video>
+        <video id="canvas" style="display:none;"></video>
+    </ion-card>
+    <div padding>
+        <ion-button expand="block" size="large" fill="outline" (click)="takePicture()">Tirar Foto</ion-button>
+    </div>
+
+
+
+
+</ion-content>

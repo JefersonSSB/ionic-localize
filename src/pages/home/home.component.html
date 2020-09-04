@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="oleo-script">Localize </ion-title>
+        <ion-buttons slot='end'>
+            <ion-button slot="icon-only" (click)="showSendPhoto()">
+                <ion-icon name="camera">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-tabs class="auto-scroll">
+    <ion-tab-bar slot="bottom">
+
+        <ion-tab-button routerLink="photos">
+            <ion-icon name="home">
+            </ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="">
+            <ion-icon name="search"></ion-icon>
+
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="signup">
+            <ion-icon name="add-circle"></ion-icon>
+
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="">
+            <ion-icon name="heart"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button routerLink="profile">
+            <ion-icon name="person-circle"></ion-icon>
+        </ion-tab-button>
+    </ion-tab-bar>
+</ion-tabs>

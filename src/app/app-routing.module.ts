@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { LoginComponent } from '../pages/login/login.component'
+import { SignupComponent } from '../pages/signup/signup.component'
+import { PhotosComponent } from '../pages/photos/photos.component'
+import { ProfileComponent } from '../pages/profile/profile.component'
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+  { path: "", component: LoginComponent },
+  { path: "signup", component: SignupComponent },
+  { path: "photos", component: PhotosComponent },
+  { path: "profile", component: ProfileComponent },
+
 ];
 
 @NgModule({

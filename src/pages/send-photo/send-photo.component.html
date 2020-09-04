@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="oleo-script">Localize </ion-title>
+        <ion-buttons slot='end'>
+            <ion-button slot="icon-only" (click)="dismiss()">
+                <ion-icon name="close">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="auto-scroll">
+    <ion-card>
+        <ion-slides>
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item>
+                        <img src="http://lorempixel.com/512/512" alt="" class="inkwell" style="width: 100%">
+                    </ion-item>
+                    <ion-item><small>inkwell</small></ion-item>
+                </ion-list>
+            </ion-slide>
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item>
+                        <img src="http://lorempixel.com/512/512/sports/" alt="" class="willow" style="width: 100%">
+                    </ion-item>
+                    <ion-item><small>willow</small></ion-item>
+                </ion-list>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-list lines="none">
+                    <ion-item>
+                        <img src="http://lorempixel.com/512/512/sports/" alt="" class="nashville" style="width: 100%">
+                    </ion-item>
+                    <ion-item><small>nashville</small></ion-item>
+                </ion-list>
+            </ion-slide>
+
+        </ion-slides>
+
+
+
+        <ion-card-content>
+            <ion-list lines="none">
+                <ion-item>
+                    <ion-input type="text" placeholder="Título"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-textarea placeholder="Mensagem" rows="3"></ion-textarea>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+        <ion-row class="ion-no-padding">
+            <ion-col>
+                <ion-button fill="clear" color="danger" size="small">
+                    <ion-icon name="location"></ion-icon> Ativar localização
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+    <div class="ion-padding">
+
+        <ion-button fill="outline" expand="block" size="large">
+            Enviar
+        </ion-button>
+
+    </div>
+
+</ion-content>
