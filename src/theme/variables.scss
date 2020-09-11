@@ -17,8 +17,8 @@ $colors: (primary: #3897F0,
 /** Ionic CSS Variables **/
 :root {
 
-
-  --highlight-color-focused: #ffffff;
+  --ion-item-background-activated: red;
+  --highlight-color-focused: #d61f1f;
   /** primary **/
   --ion-color-primary: #3897F0;
   --ion-color-primary-rgb: 56, 128, 255;

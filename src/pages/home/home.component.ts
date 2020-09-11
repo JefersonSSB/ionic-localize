@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { TakePictureComponent } from "../take-picture/take-picture.component"
 
@@ -7,9 +9,12 @@ import { TakePictureComponent } from "../take-picture/take-picture.component"
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(private modalCtrl: ModalController, private afAuth: AngularFireAuth, public router: Router) {
+  }
+  ngOnInit(): void {
+  }
 
   async showSendPhoto() {
     const modal = await this.modalCtrl.create({

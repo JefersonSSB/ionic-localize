@@ -61,7 +61,11 @@ ion-content {
     top: 0;
 }
 
-.item-interactive {
 
+
+ion-item {
+    --ion-background-color: transparent !important;
+    --background-activated: transparent !important;
+    --background-focused: transparent !important;
     --highlight-background: unset;
 }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "localize-f0001": {
+      "hosting": {
+        "app": [
+          "localize-f0001"
+        ]
+      }
+    }
+  }
+}

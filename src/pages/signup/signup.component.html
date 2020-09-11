@@ -2,9 +2,9 @@
     <ion-grid fixed>
         <ion-row class="ion-align-items-center ion-justify-content-center">
             <ion-col size="12" size-sm="12" size-md="6">
-                <form>
+                <form [formGroup]="form">
                     <br><br><br>
-                    <h1 class="oleo-script logo-title ion-text-center">Localize</h1>
+                    <h1 class=" oleo-script logo-title ion-text-center">Localize</h1>
                     <br><br>
                     <ion-list lines="none">
                         <ion-item>
@@ -16,7 +16,8 @@
                             </ion-input>
                         </ion-item>
                     </ion-list>
-                    <ion-button expand="block" size="large" fill="outline">Cadastrar</ion-button>
+                    <ion-button expand="block" size="large" fill="outline" (click)="submit()" [disabled]="!form.valid">
+                        Cadastrar</ion-button>
                 </form>
             </ion-col>
         </ion-row>
@@ -28,7 +29,7 @@
     <ion-toolbar class="ion-text-center">
 
         <div>
-            <ion-button size='small' fill="none" expand=" block">
+            <ion-button size='small' fill="none" expand=" block" routerLink="">
                 <small> Já tem conta?&nbsp;<strong>Autentique-se</strong></small>
             </ion-button>
         </div>

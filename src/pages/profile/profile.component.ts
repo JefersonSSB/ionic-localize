@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -6,16 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
 
-  user: any;
+  public user: string = '';
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(public router: Router, private afAuth: AngularFireAuth) {
+    afAuth.authState.subscribe(user => {
+      if (user) {
+        this.user = user.email
+      }
+    });
   }
+
 
   submit() {
-
+    this.afAuth.signOut().then(() => {
+      this.router.navigateByUrl("");
+    });
   }
 }
+

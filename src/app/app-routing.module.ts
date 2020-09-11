@@ -4,11 +4,22 @@ import { LoginComponent } from '../pages/login/login.component'
 import { SignupComponent } from '../pages/signup/signup.component'
 import { PhotosComponent } from '../pages/photos/photos.component'
 import { ProfileComponent } from '../pages/profile/profile.component'
+import { HomeComponent } from '../pages/home/home.component'
+import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
+
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "signup", component: SignupComponent },
-  { path: "photos", component: PhotosComponent },
-  { path: "profile", component: ProfileComponent },
+
+  {
+    path: 'home', component: HomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }, children: [
+      { path: '', redirectTo: 'photos', pathMatch: 'full' },
+      { path: "photos", component: PhotosComponent },
+      { path: "profile", component: ProfileComponent },
+    ]
+  },
 
 ];
 
