@@ -22,4 +22,10 @@ export class HomeComponent implements OnInit {
     });
     return await modal.present();
   }
+
+
+  navigation(route) {
+    this.router.navigateByUrl(route);
+
+  }
 }

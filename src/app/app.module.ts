@@ -19,9 +19,11 @@ import { AngularFireAuthGuardModule, AngularFireAuthGuard } from "@angular/fire/
 import { AngularFireAuthModule } from "@angular/fire/auth"
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowMapComponent } from '../pages/show-map/show-map.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
-export const environment = {
+export const fireBaseEnvironment = {
   firebase: {
 
     apiKey: "AIzaSyDRFuPOoI0lneUz3VQvH4mcJjN8Ul5S25k",
@@ -42,12 +44,13 @@ export const environment = {
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(fireBaseEnvironment.firebase),
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     AngularFireAuthGuardModule,
     FormsModule,
-    AngularFireAuthModule,],
+    AngularFireAuthModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),],
   providers: [
     AngularFireAuthGuard,
     StatusBar,

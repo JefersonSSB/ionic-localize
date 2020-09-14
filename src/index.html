@@ -21,10 +21,30 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      if (!("Notification" in window)) {
+        alert("This browser does not support system notifications");
+      }
+      else if (Notification.permission !== 'denied') {
+        Notification.requestPermission(function (permission) {
+          // If the user accepts, let's create a notification
+          if (permission === "granted") {
+            var notification = new Notification("Hi there!");
+          }
+        });
+      }
+
+    });
+
+  </script>
 </head>
 
 <body>
   <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 
 </html>

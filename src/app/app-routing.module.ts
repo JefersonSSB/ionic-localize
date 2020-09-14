@@ -16,8 +16,8 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }, children: [
       { path: '', redirectTo: 'photos', pathMatch: 'full' },
-      { path: "photos", component: PhotosComponent },
-      { path: "profile", component: ProfileComponent },
+      { path: "photos", component: PhotosComponent, pathMatch: 'full' },
+      { path: "profile", component: ProfileComponent, pathMatch: 'full' },
     ]
   },
 

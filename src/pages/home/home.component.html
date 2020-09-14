@@ -13,26 +13,26 @@
 <ion-tabs class="auto-scroll">
     <ion-tab-bar slot="bottom">
 
-        <ion-tab-button routerLink="photos">
+        <ion-tab-button (click)="navigation('home')">
             <ion-icon name="home">
             </ion-icon>
         </ion-tab-button>
 
-        <ion-tab-button routerLink="">
+        <ion-tab-button (click)="navigation('home/profile')">
             <ion-icon name="search"></ion-icon>
 
         </ion-tab-button>
 
-        <ion-tab-button routerLink="signup">
+        <ion-tab-button (click)="navigation('home/profile')">
             <ion-icon name="add-circle"></ion-icon>
 
         </ion-tab-button>
 
-        <ion-tab-button routerLink="">
+        <ion-tab-button (click)="navigation('home/profile')">
             <ion-icon name="heart"></ion-icon>
         </ion-tab-button>
 
-        <ion-tab-button routerLink="profile">
+        <ion-tab-button (click)="navigation('home/profile')">
             <ion-icon name="person-circle"></ion-icon>
         </ion-tab-button>
     </ion-tab-bar>
