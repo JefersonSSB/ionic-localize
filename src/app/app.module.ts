@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from "@angular/fire/database"
 import { AngularFireAuthGuardModule, AngularFireAuthGuard } from "@angular/fire/auth-guard"
 import { AngularFireAuthModule } from "@angular/fire/auth"
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShowMapComponent } from '../pages/show-map/show-map.component';
 
 
 export const environment = {
@@ -35,7 +36,7 @@ export const environment = {
 };
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SignupComponent, HomeComponent, PhotosComponent, TakePictureComponent, SendPhotoComponent, ProfileComponent],
+  declarations: [AppComponent, LoginComponent, SignupComponent, HomeComponent, PhotosComponent, TakePictureComponent, SendPhotoComponent, ProfileComponent, ShowMapComponent],
   entryComponents: [LoginComponent],
   imports: [
     BrowserModule,

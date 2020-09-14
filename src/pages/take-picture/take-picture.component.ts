@@ -31,7 +31,6 @@ export class TakePictureComponent implements OnInit {
     var canvas = <any>document.getElementById('canvas');
     var context = canvas.getContext('2d');
 
-    console.log(canvas, context);
     context.drawImage(video, 0, 0, 320, 240);
 
     video.classList.add('animated');

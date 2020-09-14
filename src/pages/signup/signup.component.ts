@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController, NavController, AlertController } from '@ionic/angular';
+import { LoadingController, AlertController } from '@ionic/angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
 
 @Component({

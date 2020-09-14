@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController, NavController } from '@ionic/angular';
-import { HomeComponent } from '../home/home.component';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -49,8 +48,9 @@ export class LoginComponent implements OnInit {
 
     this.afAuth.signInWithEmailAndPassword(this.form.controls['email'].value, this.form.controls['password'].value)
       .then(() => {
-        loader.dismiss();
         this.router.navigateByUrl("home");
+        loader.dismiss();
+
       })
       .catch(() => {
         loader.dismiss();

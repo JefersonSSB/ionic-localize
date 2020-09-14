@@ -1,20 +1,33 @@
 <ion-content class="auto-scroll">
     <ion-grid fixed>
         <ion-row class="ion-justify-content-center">
-            <ion-col size="12" size-sm="12" size-md="6">
+            <ion-col size="12" size-sm="12" size-md="4" *ngFor="let photo of photos" class="animated zoomIn">
                 <ion-card>
-                    <img src="http://lorempixel.com/512/512" alt="">
+                    <img src="{{ photo.image }}" alt="{{ photo.title }}" class="{{ photo.filter }}" width="100%" /><br>
                     <ion-card-content>
-                        <ion-card-title>Titulo aqui</ion-card-title>
-                        <p>Menssagem da imagen</p>
-                        <p><small>postado em 03/09/2020 16:15 por
-                                <strong>jefersonsilvasantos_@hotmail.com</strong></small></p>
+                        <ion-card-title>
+                            {{ photo.title }}<br>
+                        </ion-card-title>
+                        <p>
+                            {{ photo.message }}<br>
+                        </p>
+                        <p><small>postado em {{ photo.date | date: 'dd/MM/yyyy HH:mm' }} <br>
+                                por <strong>{{ photo.user }}</strong></small></p>
                     </ion-card-content>
-                    <ion-row class="ion-no-padding">
+                    <ion-row no-padding>
                         <ion-col>
-                            <ion-button fill="clear" color="danger" size="small">
-                                <ion-icon name="location"></ion-icon> VER NO MAPA
+                            <ion-button fill="clear" color="danger" size="small" *ngIf="photo.location != ''"
+                                (click)="showMap(photo.location)">
+                                <ion-icon name="location">
+                                </ion-icon> VER NO MAPA
                             </ion-button>
+
+                            <ion-button fill="clear" color="danger" size="small" *ngIf="photo.location == ''">
+                                <ion-icon name="location">
+                                </ion-icon> Localização não Disponível
+                            </ion-button>
+
+
                         </ion-col>
 
                     </ion-row>

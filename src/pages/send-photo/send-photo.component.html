@@ -25,26 +25,34 @@
 
 
         <ion-card-content>
-            <ion-list lines="none">
-                <ion-item>
-                    <ion-input type="text" placeholder="Título"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-textarea placeholder="Mensagem" rows="3"></ion-textarea>
-                </ion-item>
-            </ion-list>
+            <form [formGroup]="form">
+                <ion-list lines="none">
+                    <ion-item>
+                        <ion-input type="text" placeholder="Título" maxlength="40" formControlName="title"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-textarea placeholder="Mensagem" rows="3" maxlength="255" formControlName="message">
+                        </ion-textarea>
+                    </ion-item>
+                </ion-list>
+            </form>
         </ion-card-content>
         <ion-row class="ion-no-padding">
             <ion-col>
-                <ion-button fill="clear" color="danger" size="small">
-                    <ion-icon name="location"></ion-icon> Ativar localização
+
+                <ion-button fill="clear" color="danger" size="small" *ngIf="location == ''" (click)="getLocation()">
+                    <ion-icon name='location'></ion-icon> Ativar Localização
                 </ion-button>
+                <ion-button fill="clear" color="danger" size="small" *ngIf="location != ''">
+                    <ion-icon name='location'></ion-icon> {{ location }}
+                </ion-button>
+
             </ion-col>
         </ion-row>
     </ion-card>
     <div class="ion-padding">
 
-        <ion-button fill="outline" expand="block" size="large">
+        <ion-button fill="outline" expand="block" size="large" [disabled]="!form.valid" (click)="submit()">
             Enviar
         </ion-button>
 
