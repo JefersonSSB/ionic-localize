@@ -4,7 +4,7 @@
   "defaultProject": "app",
   "newProjectRoot": "projects",
   "projects": {
-    "localize": {
+    "app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -19,7 +19,6 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "allowedCommonJsDependencies": [
               "lodash",
               "firebase",
